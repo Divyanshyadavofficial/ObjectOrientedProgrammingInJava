@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
+
+        // ------------------ ARRAYS ------------------
         // store 5 roll nos
         int[] numbers = new int[5];
 
@@ -14,106 +16,122 @@ public class Main {
         int[] rno = new int[5];
         String[] name = new String[5];
         float[] marks = new float[5];
-//         can you provide me some sort of data structure
-//         in which every single elements contain {roll,name,marks}
-//         this is where object oriented programming comes...
 
-//         A class is a named group of properties and functions
-//        by convention Class starts with a capital letter.
+        // can you provide me some sort of data structure
+        // in which every single element contains {roll,name,marks}
+        // this is where object oriented programming comes...
 
-        /* if you want to create your own data type you can
-          use classes*/
-//        it is basically a template
-//         a class is an template of an object
+        // ------------------ OBJECT ORIENTED PROGRAMMING ------------------
 
-//        ----objects---
-//        an object is an instance of a class
-//        whenever you are creating an object of a class
-//        you are creating an instance of that class.
-//         occupies space in the memory
+        // A class is a named group of properties and functions
+        // by convention Class starts with a capital letter.
 
+        // If you want to create your own data type you can use classes
+        // it is basically a template
+        // a class is a template of an object
 
+        // ------------------ OBJECTS ------------------
 
-//        --- new---
-//        Student student1;-- it is declaring a reference to the object.
-//        by default the value will be null for object
-//
-//        student1 = new Student();
-//        this new operator it actually dynamically allocates
-//        the memory at runtime and returns a reference to it.
-//
-//
+        // An object is an instance of a class.
+        // Whenever you are creating an object of a class
+        // you are creating an instance of that class.
+        // It occupies space in the memory.
 
-//        ---. operator---
-//        The . operator basically links the reference variable
-//        student1 the object with the name of the instance variable
-//        instance variables are the variables inside the
-//        objects that are declared in the class outside any method
-//
-//        this is how it works in java hence all class
-//        objects in java must be allocated dynamically
+        // Student student1; -- declaring a reference to the object.
+        // By default the value will be null for object
 
-//        when you create an object of a class that class
-//        is being instanciated
+        // student1 = new Student();
+        // The `new` operator dynamically allocates memory at runtime
+        // and returns a reference to it.
 
-//        ---constructor--
-//        A constructor basically defines what happens
-//        when a object is being created.
-//
-//        --this keyword--
-//
-//
+        // The `.` operator links the reference variable (e.g., student1)
+        // to the object's instance variables.
 
-//        Student[] students = new Student[5];
+        // All class objects in Java must be allocated dynamically.
+        // When you create an object of a class, that class is being instantiated.
 
+        // ------------------ CONSTRUCTOR ------------------
 
-//        System.out.println(Arrays.toString(students));
-        Student kunal = new Student(15,"kunal kushwaha",85.4f);
+        // A constructor defines what happens when an object is created.
+
+        // ------------------ DEMO OBJECT ------------------
+        Student kunal = new Student(15, "kunal kushwaha", 85.4f);
 //        kunal.rno = 13;
 //        kunal.name = "kunal Kushwaha";
 //        kunal.marks = 33.0f;
-        System.out.println(kunal);// it will give some random value
-        System.out.println(kunal.rno);// by default gives 0
-        System.out.println(kunal.name);// by default give null
-        System.out.println(kunal.marks);//by default 0.0
+
+        System.out.println(kunal);          // it will give some random value (reference string)
+        System.out.println(kunal.rno);      // prints: 13 (set in constructor)
+        System.out.println(kunal.name);     // prints: kunal Kushwaha
+        System.out.println(kunal.marks);    // prints: 33.0
 
 //        kunal.changeName("Div");
 //        kunal.greeting();
+
+        Student random = new Student(kunal);
+        System.out.println(random.name);    // prints kunal Kushwaha (copied from kunal)
+        Student random2 = new Student();
+        System.out.println(random2.name);
+        Student one = new Student();
+        Student two = one;
+        one.name = "Something Something";
+        System.out.println(two.name);
     }
-    // create a class
-    // for every single student.
 }
-class Student{
+
+// ------------------ CLASS DEFINITION ------------------
+
+class Student {
     int rno;
     String name;
-    float marks=90.0f;
+    float marks = 90.0f;
 
+    // ------------------ INSTANCE METHODS ------------------
 
-    void greeting(){
-        System.out.println("Hello! My name is "+this.name);
+    void greeting() {
+        System.out.println("Hello! My name is " + this.name);
     }
-    void changeName(String newName){
+
+    void changeName(String newName) {
         this.name = newName;
     }
-//        A constructor
-//    example of constructor overloading
-    Student(){
-        this.rno = 13;
-        this.name = "kunal Kushwaha";
-        this.marks = 33.0f;
+
+    // ------------------ COPY CONSTRUCTOR ------------------
+
+    Student(Student other) {
+        this.name = other.name;
     }
-    Student(int rno,String name,float marks){
-        this.rno = 13;
-        this.name = "kunal Kushwaha";
-        this.marks = 33.0f;
+
+    // ------------------ DEFAULT CONSTRUCTOR ------------------
+
+    Student() {
+        // this is how you call a constructor from another
+        // another constructor
+        // internally: new Student();
+        this(13,"default person",100.0f);
     }
-//    if here we have same variable name then use this
-//    if here we use different variable names then this is not required
-//    eg
-//    Student(int roll,String naam,float mark){
-//        rno = roll;
-//        name = naam;
-//        mark = marks;
-//
-//    }
+
+    // ------------------ PARAMETERIZED CONSTRUCTOR ------------------
+
+    // Student arpit = new Student(17,"Arpit",89.7f);
+    // here, this will be replaced with arpit
+
+    Student(int rno, String name, float marks) {
+        this.rno = rno;
+        this.name = name;
+        this.marks = marks;
+    }
+
+    // Note:
+    // If here we have same variable name then use `this`
+    // If we use different variable names then `this` is not required
+
+    /*
+    Example:
+    Student(int roll, String naam, float mark){
+        rno = roll;
+        name = naam;
+        marks = mark;
+    }
+    */
 }
