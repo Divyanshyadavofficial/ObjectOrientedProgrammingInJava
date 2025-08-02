@@ -76,6 +76,9 @@ public class Main {
         Student two = one;
         one.name = "Something Something";
         System.out.println(two.name);
+        A obj = new A("sssssd");
+        System.out.println(obj);// it will display some hash value
+
     }
 }
 

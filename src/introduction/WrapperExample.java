@@ -15,13 +15,13 @@ public class WrapperExample {
 
         // ------------------ FINAL KEYWORD ------------------
         final int BONUS = 2;
-        // BONUS = 2; // ❌ Error: cannot assign a value to final variable
+        // BONUS = 2; //  Error: cannot assign a value to final variable
 
         // Final with non-primitives (reference cannot be changed, but object can be modified)
         final A kunal = new A("kunal");
-        kunal.name = "other name"; // ✅ allowed: changing internal state
+        kunal.name = "other name"; //  allowed: changing internal state
 
-        // kunal = new A("new object"); // ❌ Error: final reference can't be reassigned
+        // kunal = new A("new object"); //  Error: final reference can't be reassigned
 
         // ------------------ GARBAGE COLLECTION ------------------
         A obj;
