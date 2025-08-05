@@ -14,6 +14,10 @@ public class Main {
 //        declare or modify static variable.
         System.out.println(Human.population);
         System.out.println(Human.population);
+        greeting();
 
+    }
+    static void greeting(){
+        System.out.println("Hello World");
     }
 }
