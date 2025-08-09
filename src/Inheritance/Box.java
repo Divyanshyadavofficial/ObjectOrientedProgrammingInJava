@@ -4,6 +4,7 @@ public class Box {
     double l;
     double h;
     double w;
+    double weight;
 
     Box(){
         this.h = -1;
@@ -17,6 +18,7 @@ public class Box {
         this.h = side;
     }
     Box(double l,double h, double w){
+        System.out.println("Box class constructor");
         this.l = l;
         this.h = h;
         this.w = w;
