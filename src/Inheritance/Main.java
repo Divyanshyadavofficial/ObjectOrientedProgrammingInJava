@@ -19,5 +19,10 @@ public class Main {
 //      call the constructor of child class
 //      hence this is giving an error
 //        BoxWeight box6 = new Box(2,3,4);
+
+
+
+        BoxPrice box = new BoxPrice(5,8,200);
+
     }
 }

@@ -12,7 +12,10 @@ public class BoxWeight extends Box{
 //  it is exactly equal to Box box5 = new BoxWeight(2,3,4);
 //  what is accessed is based on the type of
 //  reference variable not the type of object.
-
+    BoxWeight(double side,double weight){
+        super(side);
+        this.weight = weight;
+    }
     public BoxWeight(double l, double h, double w, double weight) {
 
         super(l, h, w);// call the parent class constructor
