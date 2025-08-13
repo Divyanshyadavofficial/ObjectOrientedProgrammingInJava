@@ -11,5 +11,6 @@ public class Main {
         Shapes square = new Square();// but how and why?
         square.area();
 
+
     }
 }

@@ -5,6 +5,10 @@ public class BoxWeight extends Box{
     public BoxWeight(){
         this.weight = -1;
     }
+
+    static void greeting(){
+        System.out.println("Hey, I am in boxweight class greetings");
+    }
     BoxWeight(BoxWeight other){
         super(other);
         weight = other.weight;
@@ -29,6 +33,7 @@ public class BoxWeight extends Box{
 //
         this.weight = weight;
         System.out.println(super.weight);
+
 
     }
 }
