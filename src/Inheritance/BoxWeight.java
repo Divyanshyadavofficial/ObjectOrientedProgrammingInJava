@@ -1,5 +1,7 @@
 package Inheritance;
 
+import java.util.ArrayList;
+
 public class BoxWeight extends Box{
     double weight;
     public BoxWeight(){
@@ -8,6 +10,8 @@ public class BoxWeight extends Box{
 
     static void greeting(){
         System.out.println("Hey, I am in boxweight class greetings");
+//        ArrayList list = new ArrayList();
+//        list.get(3);// abstraction example
     }
     BoxWeight(BoxWeight other){
         super(other);
