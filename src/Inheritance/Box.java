@@ -1,7 +1,7 @@
 package Inheritance;
 
 public class Box {
-    double l;
+    private double l;// data hiding.
     double h;
     double w;
     double weight;
@@ -15,7 +15,12 @@ public class Box {
         this.l = -1;
         this.w = -1;
     }
-//    cube
+
+    public double getL() {
+        return l;
+    }
+
+    //    cube
     Box (double side){
         this.w = side;
         this.l = side;
