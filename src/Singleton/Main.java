@@ -1,6 +1,7 @@
 package Singleton;
 import access.A;
-public class Main  {
+public class Main {
+
 
     public static void main(String[] args) {
         SingletonExample obj1 = SingletonExample.getInstance();
@@ -11,6 +12,6 @@ public class Main  {
         A a = new A(10,"kunal");
         a.getNum();
 //      int n = a.num;
-//        int n = a.num;
+//
     }
 }
